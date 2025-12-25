@@ -17,7 +17,8 @@ struct PaymentProcessor {
       case .ticket(_,): 
             finalStatus = .pending
             print("O seu pagamento está pendente. O seu pagamento tem até 3 dias para compensar.")
-      
+      case .balance: 
+      finalStatus = .approved
     }
   }
 }
