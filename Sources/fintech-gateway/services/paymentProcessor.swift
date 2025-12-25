@@ -1,5 +1,5 @@
 struct PaymentProcessor { 
-  var finalStatus: TransactionStatus
+  private var finalStatus: TransactionStatus
 
   mutating func Processor(paymentT: PaymentType) { 
     switch paymentT { 
@@ -20,5 +20,8 @@ struct PaymentProcessor {
       case .balance: 
       finalStatus = .approved
     }
+
+    print("\(finalStatus.rawValue)")
   }
+
 }
