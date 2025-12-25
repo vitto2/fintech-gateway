@@ -1,4 +1,4 @@
-let payment = PaymentProcessor()
+var payment = PaymentProcessor()
 
 let pagamentos: [PaymentType] = [
     .pix(keyPix: "email@cliente.com"),
@@ -10,3 +10,5 @@ let pagamentos: [PaymentType] = [
 for pagamento in pagamentos {
     payment.Processor(paymentT: pagamento)
 }
+
+print("teste")

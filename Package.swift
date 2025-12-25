@@ -1,26 +1,27 @@
-// swift-tools-version: 6.2
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
+// swift-tools-version: 5.9
 import PackageDescription
 
 let package = Package(
     name: "fintech-gateway",
+    platforms: [
+        .macOS(.v12) // Ou a versão que você estiver usando
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "fintech-gateway",
-            targets: ["fintech-gateway"]
-        ),
+        .executable(name: "fintech-gateway", targets: ["fintech-gateway"])
+    ],
+    dependencies: [
+        // Suas dependências aqui (Vapor, etc)
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "fintech-gateway"
+        // 1. Mude para .executableTarget
+        .executableTarget(
+            name: "fintech-gateway",
+            dependencies: [
+                // .product(name: "Vapor", package: "vapor"),
+            ],
+            path: "Sources/fintech-gateway" // Garante que ele olhe só aqui
         ),
-        .testTarget(
-            name: "fintech-gatewayTests",
-            dependencies: ["fintech-gateway"]
-        ),
+        // 2. Garante que o teste não "roube" arquivos do principal
+       
     ]
 )
