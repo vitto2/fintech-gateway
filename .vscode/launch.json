@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:fintech-gateway}",
+      "name": "Debug fintech-gateway",
+      "target": "fintech-gateway",
+      "configuration": "debug",
+      "preLaunchTask": "swift: Build Debug fintech-gateway"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:fintech-gateway}",
+      "name": "Release fintech-gateway",
+      "target": "fintech-gateway",
+      "configuration": "release",
+      "preLaunchTask": "swift: Build Release fintech-gateway"
+    }
+  ]
+}

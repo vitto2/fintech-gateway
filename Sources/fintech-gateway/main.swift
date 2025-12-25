@@ -11,4 +11,3 @@ for pagamento in pagamentos {
     payment.Processor(paymentT: pagamento)
 }
 
-print("teste")
